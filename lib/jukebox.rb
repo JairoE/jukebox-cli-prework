@@ -70,4 +70,4 @@ def run
     command = gets.chomp
   end
 
-  
+end
