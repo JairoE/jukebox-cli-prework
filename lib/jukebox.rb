@@ -10,3 +10,36 @@ songs = [
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
 
+# def say_hello(name)
+#   "Hi #{name}!"
+# end
+#
+# puts "Enter your name:"
+# users_name = gets.chomp
+#
+# puts say_hello(users_name)
+
+def help
+  puts "I accept the following commands:
+          - help : displays this help message
+          - list : displays a list of songs you can play
+          - play : lets you choose a song to play
+          - exit : exits this program "
+end
+
+def list(songs)
+  songs.each_with_index do |song, index|
+    puts "#{index+1}. #{song}"
+  end
+end
+
+def play(songs)
+  puts "Please enter a song name or number:"
+  user_response = gets.chomp
+
+  if user_response.instance_of?(string) && songs.include?(user_response)
+    puts "Playing <#{user_response}>"
+  elsif user_response.instance_of?(int)
+    puts "Playing <#{songs[user_response-1]}"
+  else
+    puts "Invalid input, please try again"
