@@ -27,13 +27,13 @@ def help
           - exit : exits this program "
 end
 
-def list
+def list(songs)
   songs.each_with_index do |song, index|
     puts "#{index+1}. #{song}"
   end
 end
 
-def play
+def play(songs)
   puts "Please enter a song name or number:"
   user_response = gets.chomp
 
@@ -57,9 +57,9 @@ def run(songs)
 
   while command != "exit"
     if command == "list"
-      list
+      list(songs)
     elsif command == "play"
-      play
+      play(songs)
     elsif command == "help"
       help
     elsif command == "exit"
